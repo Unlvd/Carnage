@@ -7,54 +7,24 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/battleTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/you_turn"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/refreshButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/refresh_button"
-        app:layout_constraintEnd_toEndOf="@+id/battleTextView"
-        app:layout_constraintStart_toStartOf="@+id/battleTextView"
-        app:layout_constraintTop_toBottomOf="@+id/battleTextView" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:text="@string/attack_button"
-        app:layout_constraintEnd_toEndOf="@+id/refreshButton"
-        app:layout_constraintStart_toStartOf="@+id/refreshButton"
-        app:layout_constraintTop_toBottomOf="@+id/refreshButton" />
-
-    <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="420dp"
+        android:layout_marginEnd="52dp"
         android:text="@string/block_view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="80dp"
         android:text="@string/attack_view"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/cbHead"
@@ -92,7 +62,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cbBelt" />
 
     <CheckBox
-        android:id="@+id/checkBox13"
+        android:id="@+id/cbBlockHead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -102,27 +72,96 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <CheckBox
-        android:id="@+id/checkBox14"
+        android:id="@+id/cbBlockChest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/block_chest"
-        app:layout_constraintStart_toStartOf="@+id/checkBox13"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox13" />
+        app:layout_constraintStart_toStartOf="@+id/cbBlockHead"
+        app:layout_constraintTop_toBottomOf="@+id/cbBlockHead" />
 
     <CheckBox
-        android:id="@+id/checkBox15"
+        android:id="@+id/cbBlockBelt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/block_belt"
-        app:layout_constraintStart_toStartOf="@+id/checkBox14"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox14" />
+        app:layout_constraintStart_toStartOf="@+id/cbBlockChest"
+        app:layout_constraintTop_toBottomOf="@+id/cbBlockChest" />
 
     <CheckBox
-        android:id="@+id/checkBox16"
+        android:id="@+id/cbBlockLegs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/block_legs"
-        app:layout_constraintStart_toStartOf="@+id/checkBox15"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox15" />
+        app:layout_constraintStart_toStartOf="@+id/cbBlockBelt"
+        app:layout_constraintTop_toBottomOf="@+id/cbBlockBelt" />
+
+    <Button
+        android:id="@+id/attackButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/attack_button"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/enemyImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        app:layout_constraintStart_toEndOf="@+id/cbHead"
+        app:layout_constraintTop_toTopOf="@+id/cbHead"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/playerImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="84dp"
+        app:layout_constraintEnd_toStartOf="@+id/cbBlockHead"
+        app:layout_constraintTop_toTopOf="@+id/cbBlockHead"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/playerHpLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/playerImage"
+        app:layout_constraintEnd_toEndOf="@+id/playerImage"
+        app:layout_constraintStart_toStartOf="@+id/playerImage" />
+
+    <TextView
+        android:id="@+id/enemyHpLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/enemyImage"
+        app:layout_constraintEnd_toEndOf="@+id/enemyImage"
+        app:layout_constraintStart_toStartOf="@+id/enemyImage" />
+
+    <TextView
+        android:id="@+id/topDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/bottomDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbLegs" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

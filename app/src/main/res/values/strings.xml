@@ -10,8 +10,9 @@
     <string name="block_belt">блок пояса</string>
     <string name="block_legs">блок ног</string>
     <string name="refresh_button">Обновить</string>
-    <string name="attack_button">В бой</string>
+    <string name="block_attack_text">"Демон пытался ударить вас $enemyAttackName ,но вы заблокировали удар"</string>
     <string name="attack_view">Атака</string>
     <string name="block_view">Защита</string>
+    <string name="attack_button">В АТАКУ</string>
 
 </resources>
