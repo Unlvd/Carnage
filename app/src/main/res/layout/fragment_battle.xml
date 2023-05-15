@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.BattleFragment">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="52dp"
+        android:text="@string/block_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bottomDialog" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/attack_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/cbHead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="12dp"
+        android:text="@string/attack_head"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <CheckBox
+        android:id="@+id/cbChest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/attack_chest"
+        app:layout_constraintStart_toStartOf="@+id/cbHead"
+        app:layout_constraintTop_toBottomOf="@+id/cbHead" />
+
+    <CheckBox
+        android:id="@+id/cbBelt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/attack_belt"
+        app:layout_constraintStart_toStartOf="@+id/cbChest"
+        app:layout_constraintTop_toBottomOf="@+id/cbChest" />
+
+    <CheckBox
+        android:id="@+id/cbLegs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/attack_legs"
+        app:layout_constraintStart_toStartOf="@+id/cbBelt"
+        app:layout_constraintTop_toBottomOf="@+id/cbBelt" />
+
+    <CheckBox
+        android:id="@+id/cbBlockHead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/block_head"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <CheckBox
+        android:id="@+id/cbBlockChest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/block_chest"
+        app:layout_constraintStart_toStartOf="@+id/cbBlockHead"
+        app:layout_constraintTop_toBottomOf="@+id/cbBlockHead" />
+
+    <CheckBox
+        android:id="@+id/cbBlockBelt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/block_belt"
+        app:layout_constraintStart_toStartOf="@+id/cbBlockChest"
+        app:layout_constraintTop_toBottomOf="@+id/cbBlockChest" />
+
+    <CheckBox
+        android:id="@+id/cbBlockLegs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/block_legs"
+        app:layout_constraintStart_toStartOf="@+id/cbBlockBelt"
+        app:layout_constraintTop_toBottomOf="@+id/cbBlockBelt" />
+
+    <Button
+        android:id="@+id/attackButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/attack_button"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/enemyImage"
+        android:layout_width="150dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="-20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cbLegs"
+        app:layout_constraintStart_toEndOf="@+id/cbHead"
+        app:layout_constraintTop_toTopOf="@+id/cbHead"
+        tools:srcCompat="@drawable/red_devil" />
+
+    <ImageView
+        android:id="@+id/playerImage"
+
+        android:layout_width="150dp"
+        android:layout_height="230dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/attackButton"
+        app:layout_constraintEnd_toStartOf="@+id/cbBlockHead"
+        app:layout_constraintTop_toTopOf="@+id/cbBlockHead"
+        tools:srcCompat="@drawable/_271514449" />
+
+    <TextView
+        android:id="@+id/playerHpLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        app:layout_constraintBottom_toTopOf="@+id/playerImage"
+        app:layout_constraintEnd_toEndOf="@+id/playerImage"
+        app:layout_constraintStart_toStartOf="@+id/playerImage" />
+
+    <TextView
+        android:id="@+id/enemyHpLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/enemyImage"
+        app:layout_constraintEnd_toEndOf="@+id/enemyImage"
+        app:layout_constraintStart_toStartOf="@+id/enemyImage" />
+
+    <TextView
+        android:id="@+id/topDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/bottomDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbLegs" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,15 +1,17 @@
-package com.example.carnage
+package com.example.carnage.fragments
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
 import android.view.View
-
+import android.view.ViewGroup
 import android.widget.CheckBox
-import com.example.carnage.databinding.ActivityMainBinding
+import com.example.carnage.R
+import com.example.carnage.databinding.FragmentBattleBinding
 
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+
+class BattleFragment : Fragment() {
     private var attackCheckedBox: CheckBox? = null
     private var blockFirstCheckedBox: CheckBox? = null
     private var blockSecondCheckedBox: CheckBox? = null
@@ -17,16 +19,21 @@ class MainActivity : AppCompatActivity() {
     private val maxEnemyHp = 100
     private val enemyAttack = 3..10
     private val playerAttack = 3..10
+    private var _binding: FragmentBattleBinding? = null
+    private val binding get() = _binding!!
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = FragmentBattleBinding.inflate(inflater,container,false)
+
         var currentPlayerHp = maxPlayerHp
         var currentEnemyHp = maxEnemyHp
-        var playerAttackPosition = 0
 
+        binding.playerImage.setImageResource(R.drawable._271514449)
+        binding.enemyImage.setImageResource(R.drawable.red_devil)
 
         selectCheckBox(binding.cbHead)
         selectCheckBox(binding.cbChest)
@@ -36,6 +43,7 @@ class MainActivity : AppCompatActivity() {
         selectBlockCheckBox(binding.cbBlockChest)
         selectBlockCheckBox(binding.cbBlockBelt)
         selectBlockCheckBox(binding.cbBlockLegs)
+
         binding.enemyHpLevel.text = "$currentEnemyHp / $maxEnemyHp"
         binding.playerHpLevel.text = "$currentPlayerHp / $maxPlayerHp"
 
@@ -70,10 +78,23 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
+
+        return binding.root
+
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
 
+
+    }
+
+    companion object {
+        @JvmStatic
+        fun newInstance() =
+            BattleFragment().apply {}
+    }
 
     private fun attackButtonVisibility(){
         if(attackCheckedBox?.isChecked == true&&blockFirstCheckedBox?.isChecked ==true&&blockSecondCheckedBox?.isChecked == true){
@@ -93,40 +114,25 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun playerAttackPosition(checkBox: CheckBox?) : Int {
-        var i = 0
-        if (checkBox == binding.cbHead) {
-            i = 1
+        val position = when (checkBox){
+            binding.cbHead -> 1
+            binding.cbChest -> 2
+            binding.cbBelt -> 3
+            else -> 4
         }
-             else if (checkBox == binding.cbChest ) {
-                 i = 2
-        }
-             else if (checkBox == binding.cbBelt  ) {
-                 i = 3
-        }
-             else if (checkBox == binding.cbLegs  ) {
-                 i = 4
-        }
-        return i
-
+        return position
     }
 
     private fun playerBlockPosition(checkBox: CheckBox?) : Int {
-        var i = 0
-        if (checkBox == binding.cbBlockHead) {
-            i = 1
+        val position = when (checkBox){
+            binding.cbBlockHead -> 1
+            binding.cbBlockChest -> 2
+            binding.cbBlockBelt -> 3
+            else -> 4
         }
-        else if (checkBox == binding.cbBlockChest ) {
-            i = 2
-        }
-        else if (checkBox == binding.cbBlockBelt  ) {
-            i = 3
-        }
-        else if (checkBox == binding.cbBlockLegs  ) {
-            i = 4
-        }
-        return i
-
+        return position
     }
+
 
     private fun selectCheckBox(checkBox: CheckBox) {
         checkBox.setOnClickListener {
@@ -136,6 +142,8 @@ class MainActivity : AppCompatActivity() {
             attackButtonVisibility()
         }
     }
+
+
     private fun selectBlockCheckBox(checkBox: CheckBox){
         checkBox.setOnClickListener {
             if(blockFirstCheckedBox?.isChecked !== true) {
@@ -151,10 +159,9 @@ class MainActivity : AppCompatActivity() {
                 blockSecondCheckedBox?.isChecked = true
             }
             attackButtonVisibility()
-
-
-
         }
     }
-    
+
+
+
 }
