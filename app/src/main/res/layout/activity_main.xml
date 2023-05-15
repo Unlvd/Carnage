@@ -7,12 +7,122 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/battleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="24dp"
+        android:text="@string/you_turn"
+        android:textSize="34sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/refreshButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/refresh_button"
+        app:layout_constraintEnd_toEndOf="@+id/battleTextView"
+        app:layout_constraintStart_toStartOf="@+id/battleTextView"
+        app:layout_constraintTop_toBottomOf="@+id/battleTextView" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="@string/attack_button"
+        app:layout_constraintEnd_toEndOf="@+id/refreshButton"
+        app:layout_constraintStart_toStartOf="@+id/refreshButton"
+        app:layout_constraintTop_toBottomOf="@+id/refreshButton" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/block_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/attack_view"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <CheckBox
+        android:id="@+id/cbHead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+
+        android:text="@string/attack_head"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <CheckBox
+        android:id="@+id/cbChest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/attack_chest"
+        app:layout_constraintStart_toStartOf="@+id/cbHead"
+        app:layout_constraintTop_toBottomOf="@+id/cbHead" />
+
+    <CheckBox
+        android:id="@+id/cbBelt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/attack_belt"
+        app:layout_constraintStart_toStartOf="@+id/cbChest"
+        app:layout_constraintTop_toBottomOf="@+id/cbChest" />
+
+    <CheckBox
+        android:id="@+id/cbLegs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/attack_legs"
+        app:layout_constraintStart_toStartOf="@+id/cbBelt"
+        app:layout_constraintTop_toBottomOf="@+id/cbBelt" />
+
+    <CheckBox
+        android:id="@+id/checkBox13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/block_head"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <CheckBox
+        android:id="@+id/checkBox14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/block_chest"
+        app:layout_constraintStart_toStartOf="@+id/checkBox13"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox13" />
+
+    <CheckBox
+        android:id="@+id/checkBox15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/block_belt"
+        app:layout_constraintStart_toStartOf="@+id/checkBox14"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox14" />
+
+    <CheckBox
+        android:id="@+id/checkBox16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/block_legs"
+        app:layout_constraintStart_toStartOf="@+id/checkBox15"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox15" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

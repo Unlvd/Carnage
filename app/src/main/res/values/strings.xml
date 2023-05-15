@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Carnage</string>
+    <string name="you_turn">CARNAGE</string>
+    <string name="attack_head">удар в голову</string>
+    <string name="attack_chest">удар в корпус</string>
+    <string name="attack_belt">удар в пояс</string>
+    <string name="attack_legs">удар по ногам</string>
+    <string name="block_head">блок головы</string>
+    <string name="block_chest">блок корпуса</string>
+    <string name="block_belt">блок пояса</string>
+    <string name="block_legs">блок ног</string>
+    <string name="refresh_button">Обновить</string>
+    <string name="attack_button">В бой</string>
+    <string name="attack_view">Атака</string>
+    <string name="block_view">Защита</string>
+
 </resources>
