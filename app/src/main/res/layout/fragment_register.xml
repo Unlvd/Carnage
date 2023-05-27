@@ -4,22 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.StartMenuFragment">
+    tools:context=".fragments.RegisterFragment">
 
     <Button
-        android:id="@+id/startButtleButton"
+        android:id="@+id/registerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/signIn_button_text"
+        android:text="@string/register_button_text"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword"
+        app:layout_constraintEnd_toEndOf="@+id/password_register_fragment"
         app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+        app:layout_constraintStart_toStartOf="@+id/password_register_fragment"
+        app:layout_constraintTop_toBottomOf="@+id/password_register_fragment"
         app:layout_constraintVertical_bias="0.076" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/email_register_fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="264dp"
@@ -35,7 +35,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/password_register_fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -45,36 +45,37 @@
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:textColorHint="#757575"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/email_register_fragment"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintStart_toStartOf="@+id/email_register_fragment"
+        app:layout_constraintTop_toBottomOf="@+id/email_register_fragment" />
 
     <TextView
-        android:id="@+id/tvRegisterEmail"
+        android:id="@+id/register_Email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/email_tv"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintBottom_toTopOf="@+id/email_register_fragment"
+        app:layout_constraintStart_toStartOf="@+id/email_register_fragment" />
 
     <TextView
-        android:id="@+id/tvRegisterPassword"
+        android:id="@+id/register_Password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/password_tv"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword" />
+        app:layout_constraintBottom_toTopOf="@+id/password_register_fragment"
+        app:layout_constraintStart_toStartOf="@+id/password_register_fragment" />
 
-    <TextView
-        android:id="@+id/register_tv"
+    <Button
+        android:id="@+id/goBackBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:text="@string/register_button_text"
-        app:layout_constraintEnd_toEndOf="@+id/startButtleButton"
-        app:layout_constraintHorizontal_bias="0.541"
-        app:layout_constraintStart_toStartOf="@+id/startButtleButton"
-        app:layout_constraintTop_toBottomOf="@+id/startButtleButton" />
+        android:layout_marginTop="44dp"
+        android:text="@string/go_back_button"
+        app:layout_constraintEnd_toEndOf="@+id/registerButton"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="@+id/registerButton"
+        app:layout_constraintTop_toBottomOf="@+id/registerButton" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

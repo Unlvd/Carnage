@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import com.example.carnage.R
 import com.example.carnage.databinding.FragmentBattleBinding
-
+import com.example.carnage.fragments.contract.router
 
 
 class BattleFragment : Fragment() {
@@ -67,6 +67,9 @@ class BattleFragment : Fragment() {
                 currentPlayerHp -= damage
                 binding.topDialog.text = "Демон ударил вас $enemyAttackName и нанес $damage урона $currentPlayerHp / $maxPlayerHp"
                 binding.playerHpLevel.text = "$currentPlayerHp / $maxPlayerHp"
+                if(currentPlayerHp <=0){
+                    router().replaceFragment(LoseFragment())
+                }
             }
             if(playerAttackFocus == enemyFirstBlock||playerAttackFocus == enemySecondBlock){
                 binding.bottomDialog.text = "Вы пытался ударить демона $playerAttackName ,но он заблокировал удар"
@@ -75,6 +78,9 @@ class BattleFragment : Fragment() {
                 currentEnemyHp -= damage
                 binding.bottomDialog.text = "Вы ударили демона $playerAttackName и нанесли $damage урона $currentEnemyHp / $maxEnemyHp"
                 binding.enemyHpLevel.text = "$currentEnemyHp / $maxEnemyHp"
+                if(currentEnemyHp <=0){
+                    router().replaceFragment(WinFragment())
+                }
             }
 
         }
@@ -98,7 +104,6 @@ class BattleFragment : Fragment() {
 
     private fun attackButtonVisibility(){
         if(attackCheckedBox?.isChecked == true&&blockFirstCheckedBox?.isChecked ==true&&blockSecondCheckedBox?.isChecked == true){
-            binding.attackButton.visibility = View.VISIBLE
         }
     }
 

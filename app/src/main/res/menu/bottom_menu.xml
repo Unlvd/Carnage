@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Home"
+        android:id="@+id/home"
+        android:icon="@drawable/ic_baseline_home_24"
+        />
+    <item android:title="Balance"
+        android:id="@+id/balance"
+        android:icon="@drawable/ic_baseline_balance_24"
+        />
+    <item android:title=""
+        android:id="@+id/placeholder"
+
+        />
+    <item android:title="Backpack"
+        android:id="@+id/backpack"
+        android:icon="@drawable/ic_baseline_backpack_24"
+        />
+    <item android:title="Hunt"
+        android:id="@+id/hunt"
+        android:icon="@drawable/ic_baseline_cruelty_free_24"
+        />
+
+</menu>

@@ -10,12 +10,13 @@ fun Fragment.router(): Router{
 
 interface Router{
 
-    fun showMenuScreen()
+    fun replaceFragment(fragment: Fragment)
 
-    fun showBattleLogScreen()
+
 
     fun goBack()
 
+    fun openMenu()
 
 
 }

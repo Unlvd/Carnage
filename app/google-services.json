@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "283502865367",
+    "project_id": "carnage-901fa",
+    "storage_bucket": "carnage-901fa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283502865367:android:9f6e69f18237db789df992",
+        "android_client_info": {
+          "package_name": "com.example.carnage"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAD-xc6dkzvQ47jhB9e0V_9uPa4QOZcx4U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
